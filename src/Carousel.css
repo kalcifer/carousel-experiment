@@ -1,0 +1,14 @@
+.container {
+  overflow-x: hidden;
+}
+.carousel {
+  display: flex;
+  padding: 20px 0;
+  border: 1px solid red;
+}
+.carousel-obj {
+  padding: 0 10px;
+}
+.refDOM {
+  opacity: 0;
+}
