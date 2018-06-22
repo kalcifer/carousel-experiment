@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>This page can have content and a carousel</div>
+        <div>This is my netflix carousel</div>
 
         <Carousel>{arr.map((val, i) => <CarouselObj key={i} />)}</Carousel>
       </div>

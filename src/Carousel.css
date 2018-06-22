@@ -1,14 +1,32 @@
 .container {
   overflow-x: hidden;
+  position: relative;
 }
 .carousel {
   display: flex;
   padding: 20px 0;
-  border: 1px solid red;
 }
 .carousel-obj {
   padding: 0 10px;
 }
 .refDOM {
   opacity: 0;
+}
+.prev,
+.next {
+  position: absolute;
+  margin-top: 20px;
+  z-index: 10;
+  content: "<";
+  width: 40px;
+  background: black;
+  border: black;
+  opacity: 0.5;
+  top: 0;
+}
+.prev:not(.noHover):hover,
+.next:not(.noHover):hover {
+  opacity: 0.8;
+  outline: none;
+  cursor: pointer;
 }

@@ -116,6 +116,11 @@ export default class Carousel extends Component {
         prevObj = child;
       });
     }
+    const prevButtonDisabled =
+      this.state.position === 0 || this.state.hoverTransitionKey;
+    const nextButtonDisabled =
+      this.state.position > this.state.fullWidth - this.state.parentWidth ||
+      this.state.hoverTransitionKey;
     return (
       <div className="container" style={{ width: parentWidth }}>
         <div
@@ -157,21 +162,17 @@ export default class Carousel extends Component {
           })}
         </div>
         <button
-          disabled={this.state.position === 0 || this.state.hoverTransitionKey}
+          disabled={prevButtonDisabled}
           onClick={this.prev}
-        >
-          Prev
-        </button>
+          className={`prev ${prevButtonDisabled ? "noHover" : ""} `}
+          style={{ height }}
+        />
         <button
-          disabled={
-            this.state.position >
-              this.state.fullWidth - this.state.parentWidth ||
-            this.state.hoverTransitionKey
-          }
+          disabled={nextButtonDisabled}
           onClick={this.next}
-        >
-          Next
-        </button>
+          style={{ height, right: 0 }}
+          className={`next ${nextButtonDisabled ? "noHover" : ""}`}
+        />
       </div>
     );
   }
